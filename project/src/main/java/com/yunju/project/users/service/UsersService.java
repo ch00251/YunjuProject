@@ -1,5 +1,8 @@
 package com.yunju.project.users.service;
 
-public interface UsersService {
+import com.yunju.project.users.dto.UsersDto;
 
+public interface UsersService {
+	//회원가입
+	public void addUser(UsersDto dto);
 }

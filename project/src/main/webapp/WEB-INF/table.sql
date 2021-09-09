@@ -1,5 +1,5 @@
 --회원 테이블
-create table user(
+create table member(
 	userId varchar2(50) not null,		--아이디
 	userPass varchar2(100) not null,	--비밀번호
 	userName varchar2(30) not null,		--이름
