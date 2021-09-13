@@ -1,7 +1,7 @@
 --회원 테이블
 create table users(
 	userId varchar2(50) not null,		--아이디
-	userPass varchar2(100) not null,	--비밀번호
+	userPwd varchar2(100) not null,	    --비밀번호
 	userName varchar2(30) not null,		--이름
 	userPhone varchar2(20) not null,	--전화번호
 	email varchar2(100) not null,		--이메일
@@ -15,4 +15,4 @@ create table users(
 	primary key(userId)
 );
 
-create sequence user_seq;
+create sequence users_seq;
