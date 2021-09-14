@@ -14,6 +14,7 @@
 	<ul>
 		<li><a href="member/list.do">회원 목록 보기(member 테이블)</a></li>
 		<li><a href="users/signupform.do">회원 가입</a></li>
+		<li><a href="users/loginform.do">로그인</a></li>
 	</ul>
 	<h2>공지사항</h2>
 </div>

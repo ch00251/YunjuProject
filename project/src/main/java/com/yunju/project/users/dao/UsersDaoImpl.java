@@ -27,6 +27,13 @@ public class UsersDaoImpl implements UsersDao{
 	public void insert(UsersDto dto) {
 		session.insert("users.insert", dto);
 	}
+
+	@Override
+	public String getPwdHash(String inputuserId) {
+		//입력한 아이디를 이용해서 저장된 비밀번호를 select 한다
+		String savePwd=session.selectOne("users.getPwdHash", inputuserId);
+		return savePwd;
+	}
 	
 	
 }

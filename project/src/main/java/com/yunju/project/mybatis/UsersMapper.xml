@@ -13,4 +13,9 @@
 		select userId from users
 		where userId=#{inputuserId}
 	</select>
+	
+	<select id="getPwdHash" parameterType="String" resultType="String">
+		select userPwd from users
+		where userId=#{inputuserId}
+	</select>
 </mapper>
