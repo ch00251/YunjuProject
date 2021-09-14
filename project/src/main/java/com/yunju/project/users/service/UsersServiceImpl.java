@@ -26,7 +26,9 @@ public class UsersServiceImpl implements UsersService{
 
 	@Override
 	public void addUser(UsersDto dto) {
+		//비밀번호 암호화
 		String encodePass=new BCryptPasswordEncoder().encode(dto.getUserPwd());
+		//암호화된 비밀번호를 UsersDto에 다시 넣어준다
 		dto.setUserPwd(encodePass);
 		dao.insert(dto);
 	}
