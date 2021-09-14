@@ -15,10 +15,11 @@ public class UsersServiceImpl implements UsersService{
 	@Autowired
 	private UsersDao dao;
 
+	//인자로 전달된 아이디가 존재하는지 여부를 map에 담아서 리턴하는 메소드
 	@Override
-	public Map<String, Object> isExistId(String inputUserId) {
-		boolean isExistId=dao.isExist(inputUserId);
-		Map<String, Object> map=new HashMap<String, Object>();
+	public Map<String, Object> isExistId(String inputuserId) {
+		boolean isExistId=dao.isExist(inputuserId);
+		Map<String, Object> map=new HashMap<>();
 		map.put("isExist", isExistId);
 		return map;
 	}

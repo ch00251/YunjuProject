@@ -12,8 +12,10 @@ public class UsersDaoImpl implements UsersDao{
 	private SqlSession session;
 
 	@Override
-	public boolean isExist(String inputUserId) {
-		String id=session.selectOne("users.isExist", inputUserId);
+	public boolean isExist(String inputuserId) {
+		//인자로 전달되는 아이디를 이용해서 select
+		String id=session.selectOne("users.isExist", inputuserId);
+		//만일 select된 결과가 null이면 존재하지 않는 아이디이다.
 		if(id == null) {
 			return false;
 		}else {

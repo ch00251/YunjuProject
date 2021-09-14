@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>/users/signupform.jsp</title>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/css/bootstrap.css" />
 <script src="${pageContext.request.contextPath }/resources/js/jquery-3.3.1.js"></script>
 <script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
@@ -15,10 +16,12 @@
 	<form action="signup.do" method="post" id="signupform">
 		<div class="form-group has-feedback">
 			<label for="userId" class="control-label">아이디</label>
-			<input type="text" class="form-control" id="userId" name="userId"/>
+			<input type="text" class="form-control" id="userId" name="userId" required="required"/>
 			<p class="help-block" id="id_check"></p>
+			<!--
 			<span class="glyphicon glyphicon-remove form-control-feedback"></span>
 			<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+			-->
 		</div>
 		<div class="form-group has-feedback">
 			<label for="userPwd" class="control-label">비밀번호</label>
@@ -52,7 +55,7 @@
 						phone+="-";
 						phone+=number.substr(3,3);
 						phone+="-";
-						phone+=number.substr(3);
+						phone+=number.substr(6);
 					}else{
 						phone += number.substr(0, 3);
                         phone += "-";
@@ -68,8 +71,10 @@
 			<label for="email" class="control-label">이메일</label>
 			<input type="email" class="form-control" id="email" name="email" placeholder="E-mail을 입력하세요"/>
 			<p class="help-block" id="email_notmatch">이메일 형식에 맞게 입력하세요</p>
+			<!--
 			<span class="glyphicon glyphicon-remove form-control-feedback"></span>
 			<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+			-->
 		</div>
 		<div class="form-group has-feedback">
 			<label for="userAddr" class="control-label">주소</label>
@@ -102,14 +107,14 @@
 			<label for="birthday" class="control-label">생년월일</label>
 			<input class="form-control" type="date" id="birthday" name="birthday" required="required"/>
 		</div>
+		<div class="sbtn">
+			<button type="reset" class="signbtn" onclick="location.href='../index.do'">취소</button>
+			<button type="submit" id="login_button" class="signbtn" name="signupbtn">회원가입</button>
+		</div>
 	</form>
 </div>
-<br /><br />
-<div class="sbtn">
-	<button type="reset" class="signbtn" onclick="location.href='../index.do'">취소</button>
-	<button type="submit" id="login_button" class="signbtn" name="signupbtn">회원가입</button>
-</div>
-<script>
+
+<script type="text/javascript">
 	//아이디 사용할 수 있는지 여부
 	var isIdUsable=false;
 	//아이디를 입력 했는지 여부

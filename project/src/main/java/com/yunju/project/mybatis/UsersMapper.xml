@@ -5,12 +5,12 @@
 		insert into users
 		(userId, userPwd, userName, userPhone, email, 
 			userAddr1, userAddr2, userAddr3, birthday)
-		value(#{userId},#{userPwd},#{userName},#{userPhone},#{email},
+		values(#{userId},#{userPwd},#{userName},#{userPhone},#{email},
 			#{userAddr1},#{userAddr2},#{userAddr3},#{birthday})
 	</insert>
 	
 	<select id="isExist" parameterType="java.lang.String" resultType="String">
 		select userId from users
-		where userId=#{userId}
+		where userId=#{inputuserId}
 	</select>
 </mapper>
