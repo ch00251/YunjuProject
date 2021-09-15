@@ -6,4 +6,6 @@ public interface UsersDao {
 	public boolean isExist(String inputuserId);
 	public void insert(UsersDto dto);
 	public String getPwdHash(String inputuserId);
+	//데이터 가져오기(개인정보 볼때 사용)
+	public UsersDto getData(String userId);
 }

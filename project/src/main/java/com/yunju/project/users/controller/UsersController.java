@@ -115,4 +115,17 @@ public class UsersController {
 		mView.setViewName("users/login");
 		return mView;
 	}
+	
+	//개인정보 보기 요청
+	@RequestMapping("/users/profile")
+	public ModelAndView userProfile(HttpServletRequest request,
+				ModelAndView mView) {
+		//로그인된 아이디 읽어오기
+		String id=(String)request.getSession().getAttribute("userId");
+		//서비스 이용해서 ModelAndView객체에 개인정보 담기
+		service.userProfile(id, mView);
+		//view page에 정보 담기
+		mView.setViewName("users/profile");
+		return mView;
+	}
 }

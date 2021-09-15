@@ -34,6 +34,11 @@ public class UsersDaoImpl implements UsersDao{
 		String savePwd=session.selectOne("users.getPwdHash", inputuserId);
 		return savePwd;
 	}
+
+	@Override
+	public UsersDto getData(String userId) {
+		return session.selectOne("users.getData", userId);
+	}
 	
 	
 }
