@@ -128,4 +128,12 @@ public class UsersController {
 		mView.setViewName("users/profile");
 		return mView;
 	}
+	
+	//비밀번호 수정폼 요청처리
+	@RequestMapping("/users/newPwdform")
+	public ModelAndView updatePwd(HttpServletRequest request, 
+					ModelAndView mView) {
+		mView.setViewName("users/newPwdform");
+		return mView;
+	}
 }
