@@ -26,6 +26,20 @@
 		<button type="submit">수정 확인</button>
 	</form>
 </div>
+
+<script>
+	//폼에 submit 이벤트가 일어났을 때 실행할 함수
+	$("form").on("submit", function(){
+		//새 비밀번호 일치하는지
+		var pwd1=$("#newPwd").val();
+		var pwd2=$("#newPwd2").val();
+		if(pwd1!=pwd2){
+			alert("비밀번호를 확인 하세요.");//알림 띄우기
+			$("#newPwd").focus();//포커스 주기
+			return false;//폼 전송 막기
+		}
+	})
+</script>
 <!--  
 <script>
 	if(${isSuccess}){

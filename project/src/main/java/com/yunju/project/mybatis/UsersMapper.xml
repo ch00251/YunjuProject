@@ -24,4 +24,10 @@
 		birthday,regidate
 	from users where userId=#{userId}
 	</select>
+	
+	<update id="updatePwd" parameterType="UsersDto">
+		update users
+		set userPwd=#{userPwd}
+		where userId=#{userId}
+	</update>
 </mapper>
