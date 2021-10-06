@@ -20,7 +20,7 @@
 	</select>
 	
 	<select id="getData" parameterType="String" resultType="usersDto">
-	select userId,userName,userPhone,email,userAddr1,userAddr2,userAddr3,
+	select userId,userPwd,userName,userPhone,email,userAddr1,userAddr2,userAddr3,
 		birthday,regidate
 	from users where userId=#{userId}
 	</select>

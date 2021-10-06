@@ -16,4 +16,6 @@ public interface UsersService {
 	public void validUser(UsersDto dto, HttpSession session, ModelAndView mView);
 	//개인정보 페이지
 	public void userProfile(String userId, ModelAndView mView);
+	//비밀번호 수정
+	public void updatePwd(UsersDto dto, ModelAndView mView);
 }

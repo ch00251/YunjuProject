@@ -13,7 +13,7 @@
 		<c:when test="${not empty sessionScope.userId }">
 			<p>
 				<strong>${userId }</strong>회원님 로그인 되었습니다.
-				<a href="url">확인</a>
+				<a href="${pageContext.request.contextPath }/home.do">확인</a>
 			</p>
 		</c:when>
 		<c:otherwise>

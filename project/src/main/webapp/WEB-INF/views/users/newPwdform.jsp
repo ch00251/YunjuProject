@@ -40,16 +40,5 @@
 		}
 	})
 </script>
-<!--  
-<script>
-	if(${isSuccess}){
-		parent.close();
-		window.close();
-		self.close();
-	}else if(${isSuccess}==false){
-		alert("비밀번호가 틀렸습니다. 다시 시도해주세요");
-	}
-</script>
-  -->
 </body>
 </html>

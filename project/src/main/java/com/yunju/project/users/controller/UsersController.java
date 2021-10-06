@@ -136,4 +136,25 @@ public class UsersController {
 		mView.setViewName("users/newPwdform");
 		return mView;
 	}
+	
+	//비밀번호 수정 반영 요청 처리
+	@RequestMapping("/users/pwdUpdate")
+	public ModelAndView authPwdUpdate(HttpServletRequest request, 
+					ModelAndView mView) {
+		//기존 비밀번호
+		String pwd=request.getParameter("userPwd");
+		//새 비밀번호
+		String newPwd=request.getParameter("newPwd");
+		//로그인된 아이디
+		String id=(String)request.getSession().getAttribute("userId");
+		//위의 정보를 UsersDto 객체에 담아 서비스에 전달
+		UsersDto dto=new UsersDto();
+		dto.setUserPwd(pwd);
+		dto.setNewPwd(newPwd);
+		dto.setUserId(id);
+		service.updatePwd(dto, mView);
+		
+		mView.setViewName("users/pwdUpdate");
+		return mView;
+	}
 }
