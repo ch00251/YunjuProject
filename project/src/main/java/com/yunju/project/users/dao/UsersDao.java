@@ -9,4 +9,5 @@ public interface UsersDao {
 	//데이터 가져오기(개인정보 볼때 사용)
 	public UsersDto getData(String userId);
 	public void updatePwd(UsersDto dto);
+	public void delete(String userId);
 }

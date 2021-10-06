@@ -65,6 +65,11 @@
 		<div class="eff"></div>
 		<a href="../home.do">홈으로</a>
 	</div>
+	<br />
+	<div class="deletebtn" style="float:right">
+		<div class="eff"></div>
+		<a href="delete.do">탈퇴</a>
+	</div>
 </div>
 </body>
 </html>

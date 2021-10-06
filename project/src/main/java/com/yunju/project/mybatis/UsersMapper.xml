@@ -30,4 +30,9 @@
 		set userPwd=#{userPwd}
 		where userId=#{userId}
 	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from users
+		where userId=#{userId}
+	</delete>
 </mapper>

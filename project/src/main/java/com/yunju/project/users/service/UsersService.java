@@ -18,4 +18,6 @@ public interface UsersService {
 	public void userProfile(String userId, ModelAndView mView);
 	//비밀번호 수정
 	public void updatePwd(UsersDto dto, ModelAndView mView);
+	//계정 삭제
+	public void deleteUser(String userId);
 }

@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -155,6 +156,21 @@ public class UsersController {
 		service.updatePwd(dto, mView);
 		
 		mView.setViewName("users/pwdUpdate");
+		return mView;
+	}
+	
+	@RequestMapping("users/delete")
+	public ModelAndView deleteUser(HttpServletRequest request, 
+					ModelAndView mView) {
+		HttpSession session=request.getSession();
+		String id=(String)session.getAttribute("userId");
+		//서비스 이용해서 회원정보 삭제
+		service.deleteUser(id);
+		//로그아웃
+		session.invalidate();
+		
+		mView.addObject("id",id);
+		mView.setViewName("users/delete");
 		return mView;
 	}
 }

@@ -75,6 +75,11 @@ public class UsersServiceImpl implements UsersService{
 			mView.addObject("isSuccess",false);
 		}
 	}
+
+	@Override
+	public void deleteUser(String userId) {
+		dao.delete(userId);
+	}
 	
 	
 }
